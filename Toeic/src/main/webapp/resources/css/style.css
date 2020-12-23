@@ -1,0 +1,48 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 16, 2020, 9:54:34 PM
+    Author     : ACER
+*/
+
+
+.cardgroup {
+    padding: 15px;
+    margin: 15px;
+}
+.margin-zero {
+    margin: 0px !important;
+}
+.display-border {
+    border: 0 ;
+}
+/*
+.card-img-top {
+    object-fit: cover;
+    width: 20%;
+    border-radius: 5px;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.card-body {
+    padding-top: 0rem;
+}
+.card-text {
+    margin-top: 4px;
+    margin-bottom: 2px;
+}*/

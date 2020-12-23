@@ -1,0 +1,64 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" 
+                data-target="#navbarNav" aria-controls="navbarNav" 
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <a class="navbar-brand" href="#">Toeic</a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <h:link styleClass="nav-link" outcome="/index?faces-redirect=true" value="Trang chủ">
+                    </h:link>
+                </li>
+                <li class="nav-item">
+                    <h:link styleClass="nav-link" outcome="/childpage/nguphaptracnghiem?faces-redirect=true" value="#{msg['texts.grammar']}">
+                    </h:link>
+                </li>
+                <li class="nav-item">
+                    <h:link styleClass="nav-link" outcome="/childpage/dienkhuyet?faces-redirect=true" value="#{msg['texts.fillOut']}">
+                    </h:link>
+                </li>
+                <li class="nav-item">
+                    <h:link styleClass="nav-link" outcome="/childpage/nghephoto?faces-redirect=true" value="#{msg['texts.listenPhoto']}">
+                    </h:link>
+                </li>
+                 <li class="nav-item">
+                    <h:link styleClass="nav-link" outcome="/childpage/nghe-question-response?faces-redirect=true" value="#{msg['texts.listenQandR']}">
+                    </h:link>
+                </li>
+            </ul>
+        </div>
+
+        <div class="navbar-right form-inline">
+            <c:if test="#{facesContext.externalContext.sessionMap.get('user') != null}" >
+                <button class="btn btn-primary my-2 my-sm-0">#{facesContext.externalContext.sessionMap.get("user").username}</button>
+                &#160;
+                <h:form>
+                    <h:commandButton action="#{userBean.logout()}"
+                                     value="Đăng xuất"
+                                     styleClass="btn btn-warning my-2 my-sm-0">
+                    </h:commandButton>
+                </h:form>
+
+            </c:if>
+            <c:if test="#{facesContext.externalContext.sessionMap.get('user') == null}" >
+                <h:link styleClass="btn btn-outline-primary my-2 my-sm-0" 
+                        outcome="/login?faces-redirect=true" 
+                        value="Đăng nhập">
+                </h:link>
+                &#160;
+                <h:link styleClass="btn btn-outline-warning my-2 my-sm-0" 
+                        outcome="/register?faces-redirect=true" 
+                        value="Đăng ký">
+                </h:link>
+
+            </c:if>
+        </div>
+    </nav>
+</ui:composition>

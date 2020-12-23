@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Trang chủ</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="templates/base.xhtml">
+            <ui:define name="content">
+                <div class="container">
+
+                    <br></br>
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <h:graphicImage styleClass="d-block w-100" name="slide1.jpg" width="700px"
+                                                height="500px" library="images" />
+                            </div>
+                            <div class="carousel-item">
+                                <h:graphicImage styleClass="d-block w-100" name="slide2.jpg" width="700px"
+                                                height="500px" library="images" />
+                            </div>
+                            <div class="carousel-item">
+                                <h:graphicImage styleClass="d-block w-100" name="slide3.jpg" width="700px"
+                                                height="500px" library="images" />
+                            </div>
+                            <div class="carousel-item">
+                                <h:graphicImage styleClass="d-block w-100" name="slide4.jpg" width="700px"
+                                                height="500px" library="images" />
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                    <br></br>
+                    <div class="view-content">
+                        <div class="row">
+                            <div class="card col-3 cardgroup margin-zero">
+                                <h:graphicImage styleClass="card-img-top" name="slide1.jpg" 
+                                                library="images" />
+                                <div class="card-body">
+                                    <h5 class="card-title">#{msg['texts.grammar']}</h5>
+                                    <h:link styleClass="btn btn-primary" outcome="/childpage/nguphaptracnghiem?faces-redirect=true" value="See more">
+                                       
+                                    </h:link>
+                                </div>
+                            </div>
+                            <div class="card col-3 cardgroup margin-zero">
+                                <h:graphicImage styleClass="card-img-top" name="slide2.jpg" 
+                                                library="images" />
+                                <div class="card-body">
+                                    <h5 class="card-title">#{msg['texts.fillOut']}</h5>
+                                    <h:link styleClass="btn btn-primary" outcome="/childpage/dienkhuyet?faces-redirect=true" value="See more">
+                                       
+                                    </h:link>
+                                </div>
+                            </div>
+                            <div class="card col-3 cardgroup margin-zero">
+                                <h:graphicImage styleClass="card-img-top" name="slide3.jpg" 
+                                                library="images" />
+                                <div class="card-body">
+                                    <h5 class="card-title">#{msg['texts.listenPhoto']}</h5>
+                                    <h:link styleClass="btn btn-primary" outcome="/childpage/nghephoto?faces-redirect=true" value="See more">
+                                        
+                                    </h:link>
+                                </div>
+                            </div>
+                            <div class="card col-3 cardgroup margin-zero">
+                                <h:graphicImage styleClass="card-img-top" name="slide4.jpg" 
+                                                library="images" />
+                                <div class="card-body">
+                                    <h5 class="card-title">#{msg['texts.listenQandR']}</h5>
+                                    <h:link styleClass="btn btn-primary" outcome="/childpage/nghe-question-response?faces-redirect=true" value="See more">
+                                      
+                                    </h:link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </ui:define>
+        </ui:composition>
+
+    </h:body>
+</html>
+

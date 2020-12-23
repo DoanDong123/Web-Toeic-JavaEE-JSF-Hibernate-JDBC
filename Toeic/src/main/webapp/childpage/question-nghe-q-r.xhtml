@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Trang chủ</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="/templates/base.xhtml">
+
+            <ui:define name="content">
+                <div class="container">
+                    <br></br>
+                    <div class="card-body">
+                        <h3 class="card-title">Bảng Câu Hỏi</h3>
+                        <h:form>
+                            <div class="view-content">
+
+                                <c:forEach var="q" items="#{questionBean.questions}">
+                                    <div class="row" >
+                                        <!--<div class="card display-border" >-->
+                                        <div class="col-7">
+                                            <audio controls="x">
+                                                <source src="/#{q.audio}" type="audio/mpeg"/>
+                                            </audio>
+                                        </div>
+                                        <div class="col-5">
+                                            <h5>#{q.content}</h5>
+                                            <div class="choose">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="#{q.id}" value="" />
+                                                    <label class="form-check-label">
+                                                        A
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="#{q.id}" value="" />
+                                                    <label class="form-check-label">
+                                                        B
+                                                    </label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="#{q.id}" value="" />
+                                                    <label class="form-check-label">
+                                                        C
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <span>
+                                                <a class="btn btn-primary" data-toggle="collapse" href="##{q.id}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Transcript</a>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="collapse multi-collapse" id="#{q.id}">
+                                                            <c:forEach var="c" items="#{choiceBean.getChoiceByQuestion(q.id)}">
+                                                                <div class="form-check">
+                                                                    <label class="form-check-label" name="#{q.id}" id="#{c.id}" value="#{c.id}">
+                                                                        #{c.content}
+                                                                    </label>
+                                                                </div>
+                                                            </c:forEach>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        <!--</div>-->
+                                    </div>
+                                    <br></br>
+                                </c:forEach>
+
+                            </div>
+
+                            <h:commandButton value="Submit"
+                                             styleClass="btn btn-success">
+                            </h:commandButton>
+                        </h:form>
+                        <br></br>
+                    </div>
+                </div>
+            </ui:define>
+        </ui:composition>
+
+
+    </h:body>
+</html>
+

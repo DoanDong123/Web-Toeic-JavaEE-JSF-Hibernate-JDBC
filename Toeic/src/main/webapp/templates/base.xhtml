@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Trang chủ</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
+        <h:outputStylesheet name="style.css" library="css" />
+        <f:loadBundle var="msg" basename="texts" />
+    </h:head>
+    <h:body>
+        <ui:insert name="header">
+            <c:if test="#{facesContext.externalContext.sessionMap.get('user') == null}" >
+                <ui:include src="header.xhtml"></ui:include>
+            </c:if>
+            <c:if test="#{facesContext.externalContext.sessionMap.get('user') != null}" >
+                <c:if test="#{facesContext.externalContext.sessionMap.get('user').user_role == 'ADMIN'}" >
+                    <ui:include src="header-admin.xhtml"></ui:include>
+                </c:if>
+                <c:if test="#{facesContext.externalContext.sessionMap.get('user').user_role == 'USER'}" >
+                    <ui:include src="header.xhtml"></ui:include>
+                </c:if>
+            </c:if>
+        </ui:insert>
+        <ui:insert name="content">            
+            <ui:include src="content.xhtml"></ui:include>
+        </ui:insert>
+        <ui:insert name="footer">
+            <ui:include src="footer.xhtml"></ui:include>
+        </ui:insert>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </h:body>
+</html>
+
