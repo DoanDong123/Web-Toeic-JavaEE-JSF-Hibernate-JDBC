@@ -13,4 +13,11 @@
 8. **B8** Chọn Servers add Apache Tomcat or TemEE v9+ (hỗ trợ chạy Web)
 9. **B9** Run Project
 
+### User
+- Username: dong    /  minh
+- Password: 123     /  123
+
+### Admin
+- Username: admin
+- Password: 1
 
