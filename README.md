@@ -1,6 +1,12 @@
 # Web-Toeic-JavaEE-JSF-Hibernate-JDBC
 ## Project JavaEE Toeic
 
+### Môi trường chuẩn bị
+
+- IDE NetBean v11+
+- JDK v13
+- Apache Tomcat v9+
+
 ### Hướng dẫn sử dụng
 
 - **B1** Tạo databse rỗng sau đó import file script toeic.db
